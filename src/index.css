@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+  background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.queastion-bg {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230),
+    url(../public/images/bg.jpg);
+}
+
+.correct {
+  animation: correct 3s ease forwards;
+}
+
+.wrong {
+  animation: wrong 3s ease forwards;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/*************** Loading ***************/
+
+.spinner {
+  background: conic-gradient(#0000 10%, #0d9488);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes correct {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: green;
+  }
+}
+
+@keyframes wrong {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: crimson;
+  }
+}
